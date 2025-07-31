@@ -1,4 +1,5 @@
 
+    <p>Testausgabe: <span x-text="typeof activeSlug !== 'undefined' ? activeSlug : 'n/a'"></span></p>
     <button @click="startAddMarker()">🞧 Marker hinzufügen</button>
     <!-- Kartencontainer -->
     <div id="map" style="height: 500px; margin-bottom: 1em;"></div>

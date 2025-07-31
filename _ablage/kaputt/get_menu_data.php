@@ -43,3 +43,4 @@ echo json_encode([
     'top' => $menuTop,
     'bottom' => $menuBottom
 ]);
+?>

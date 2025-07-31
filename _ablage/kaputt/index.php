@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="project.js" defer></script>
 </head>
 <body x-data="menuComponent()" x-init="init()">
 
@@ -52,6 +53,7 @@
     <div x-html="loadedHtml"></div>
   </div>
 </template>
+
 
 
 <nav class="footer-nav">
