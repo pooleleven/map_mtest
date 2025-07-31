@@ -1,0 +1,100 @@
+ /* ... (deine CSS-Regeln bleiben unverändert) ... */
+        body { font-family: sans-serif; margin: 20px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        
+        /* Allgemeine Listen-Items für Menüs */
+        nav ul li {
+            position: relative; /* Wichtig für absolute Positionierung der Untermenüs */
+        }
+        
+        /* Hauptmenü-Items (nebeneinander) */
+        nav:not(.footer-nav) > ul > li {
+            display: inline-block;
+        }
+
+        /* Untermenü-Items (untereinander) */
+        nav ul.submenu li {
+            display: block;
+        }
+
+/* Macht das Untermenü sichtbar, wenn die Klasse 'show' hinzugefügt wird */
+nav ul.submenu.show {
+    display: block !important; /* !important kann nötig sein, um x-show zu überschreiben,
+                                  aber oft reicht 'block' oder 'flex' */
+}
+
+        nav a {
+            font-weight: bold;
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: rgb(88, 88, 88);
+            white-space: nowrap; /* Verhindert Zeilenumbruch bei langen Menüpunkten */
+        }
+        nav a:hover {
+            background-color: #f0f0f0;
+        }
+        nav a.active {
+            font-weight: bold;
+            color: rgb(255, 2, 23);
+        }
+        .content-area {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 150px;
+            background-color: #f9f9f9;
+        }
+        .loading {
+            color: gray;
+            font-style: italic;
+        }
+
+        /* Styles für Untermenüs */
+        nav ul.submenu {
+            display: none; /* Standardmäßig versteckt, wird von x-show gesteuert */
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000; /* Stellt sicher, dass das Menü über anderen Inhalten liegt */
+            min-width: 160px;
+            top: 100%; /* Unterhalb des Elternelements */
+            left: 0;
+            border-radius: 5px; /* Abgerundete Ecken für das Untermenü-Panel */
+            overflow: hidden; /* Wichtig für abgerundete Ecken bei Listen-Items */
+        }
+        
+        /* Positionierung der zweiten Unterebene (rechts vom Elternelement) */
+        nav ul.submenu ul.submenu {
+            top: 0; /* Auf gleicher Höhe wie das Elternelement */
+            left: 100%; /* Rechts vom Elternelement */
+        }
+        
+        /* Visuelle Anpassung für Menüpunkte mit Untermenüs */
+        nav ul li.has-children > a {
+            /* Optional: Füge hier einen kleinen Pfeil oder ähnliches hinzu */
+            /* Beispiel: content: ' ▶'; */
+        }
+
+        .menu-icon {
+            margin-right: 5px;
+            vertical-align: middle;
+            width: 16px; /* Beispielgröße */
+            height: 16px; /* Beispielgröße */
+        }
+
+        /* Zusätzliche Styles für die untere Menüleiste */
+        .footer-nav {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .footer-nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        .footer-nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
