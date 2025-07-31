@@ -12,8 +12,6 @@ function menuComponent() {
             this.menu = await res.json();
         },
 
-        
-
         async loadPage(slug) {
             this.activeSlug = slug;
             this.pageTitle = '';
