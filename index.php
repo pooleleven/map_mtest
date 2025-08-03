@@ -1,12 +1,15 @@
+<?php
+if (!isset($include_id)) $include_id = '';
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Menü mit Untermenüs</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>console.log('STARTSEITE');</script>
 </head>
 <body x-data="menuComponent()" x-init="init()">
 
@@ -46,12 +49,10 @@
 </nav>
 
 <!-- Include-Dateien rendern ihren eigenen Content-Bereich -->
-<template x-if="includeFile">
-  <div class="content-area" x-data="window[dynamicModule] ? window[dynamicModule]() : {}" x-init="init()">
+<div class="content-area">
     <h2 x-text="pageTitle"></h2>
-    <div x-html="loadedHtml"></div>
-  </div>
-</template>
+    <div id="dynamic-content"></div>
+</div>
 
 
 <nav class="footer-nav">
@@ -65,7 +66,10 @@
     </ul>
 </nav>
 
-<script src="project.js"></script>
+<script>window.include_id = '<?= $include_id ?>';</script>
+
+<script src="js/project.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 </body>
 </html>
