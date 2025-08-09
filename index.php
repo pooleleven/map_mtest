@@ -12,7 +12,7 @@ if (!isset($include_id)) $include_id = '';
     <script>console.log('STARTSEITE');</script>
 </head>
 <body x-data="menuComponent()" x-init="init()">
-
+<!-- TOP MENU -->
 <nav class="main-nav">
     <ul>
         <template x-for="item in menu.top" :key="item.id">
@@ -48,13 +48,13 @@ if (!isset($include_id)) $include_id = '';
     </ul>
 </nav>
 
-<!-- Include-Dateien rendern ihren eigenen Content-Bereich -->
+<!-- CONTENT -->
 <div class="content-area">
     <h2 x-text="pageTitle"></h2>
     <div id="dynamic-content"></div>
 </div>
 
-
+<!-- FOOT MENU -->
 <nav class="footer-nav">
     <ul>
         <template x-for="item in menu.bottom" :key="item.id">
